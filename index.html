@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -7,90 +7,68 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Browser extensions manager UI</title>
+  <link rel="stylesheet" href="./src/output.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
-  <ul>
+<body class="min-h-[100vh] w-full bg-linear-180 from-[#EBF2FC] to-[#EEF8F9] bg-no-repeat dark:bg-linear-180 dark:from-[#040918] dark:to-[#091540]">
+  <header class="w-full mx-auto py-6">
+    <!-- THE PAGE LOGO AND PAGE THEME MODE SECTION -->
+    <div class="logo-and-theme bg-[hsl(200,60%,99%)] shadow-md dark:bg-[hsl(226,25%,17%)] p-3 mx-4 flex items-center justify-between rounded-lg md:w-[90%] md:mx-auto">
+      <div class="logo w-[60%]">
+        <img src="./assets/images/logo.svg" alt="logo">
+      </div>
+      <div class="theme-mode p-2.5 bg-[hsl(0,0%,93%)] dark:bg-[hsl(225,23%,24%)] rounded-lg cursor-pointer focus:outline focus:outline-[hsl(3,77%,44%)]" tabindex="0">
+        <img src="./assets/images/icon-moon.svg" alt="dark-mode">
+      </div>
+    </div>
 
-  </ul>
+    <!-- THE PAGE CATEGORIES SECTION -->
+     <div class="categories-title-and-categories my-4 md:w-[90%] md:mx-auto md:flex md:flex-row md:items-center md:justify-between">
+      <div class="title text-[hsl(227,75%,14%)] dark:text-white text-center text-2xl font-extrabold mb-3 md:w-full md:text-left">
+        <p>Extensions List</p>
+      </div>
+      <div class="categiries-list text-[hsl(227,75%,14%)] dark:text-white w-full flex items-center justify-center md:justify-end">
+        <ul class="flex text-center space-x-2">
+          <li tabindex="0" class="py-2 px-4 text-sm bg-[hsl(200,60%,99%)] dark:bg-[hsl(226,25%,17%)] border border-[hsl(0,0%,78%)] dark:border-[hsl(226,11%,37%)] rounded-full cursor-pointer hover:bg-[hsl(200,60%,99%,0.1)] hover:text-[hsl(227,75%,14%,0.6)] dark:hover:bg-[hsl(226,11%,37%)] dark:focus:bg-[hsl(226,11%,37%)] focus:outline dark:focus:outline-2 focus:border-none focus:outline-[hsl(3,77%,44%)] focus:outline-offset-1 dark:focus:outline-offset-2">All</li>
+          <li tabindex="0" class="py-2 px-4 text-sm bg-[hsl(200,60%,99%)] dark:bg-[hsl(226,25%,17%)] border border-[hsl(0,0%,78%)] dark:border-[hsl(226,11%,37%)] rounded-full cursor-pointer hover:bg-[hsl(200,60%,99%,0.1)] hover:text-[hsl(227,75%,14%,0.6)] dark:hover:bg-[hsl(226,11%,37%)] dark:focus:bg-[hsl(226,11%,37%)] focus:outline dark:focus:outline-2 focus:border-none focus:outline-[hsl(3,77%,44%)] focus:outline-offset-1 dark:focus:outline-offset-2">Active</li>
+          <li tabindex="0" class="py-2 px-4 text-sm bg-[hsl(200,60%,99%)] dark:bg-[hsl(226,25%,17%)] border border-[hsl(0,0%,78%)] dark:border-[hsl(226,11%,37%)] rounded-full cursor-pointer hover:bg-[hsl(200,60%,99%,0.1)] hover:text-[hsl(227,75%,14%,0.6)] dark:hover:bg-[hsl(226,11%,37%)] dark:focus:bg-[hsl(226,11%,37%)] focus:outline dark:focus:outline-2 focus:border-none focus:outline-[hsl(3,77%,44%)] focus:outline-offset-1 dark:focus:outline-offset-2">Inactive</li>
+        </ul>
+      </div>  
+     </div>
+  </header>
+  <main class="extension-container w-full md:w-[90%] md:mx-auto">
+    <div class="ext p-3.5 bg-[hsl(200,60%,99%)] shadow-md rounded-2xl space-y-15 dark:bg-[hsl(226,25%,17%)]">
+      <div class="flex space-x-3">
+        <div class="ext-logo">
+          <img src="./assets/images/logo-devlens.svg" alt="logo">
+        </div>
+        <div class="ext-details text-wrap">
+          <p class="name text-[hsl(227,75%,14%)] font-extrabold text-xl dark:text-white">DevLens</p>
+          <p class="description text-lg text-[hsl(226,11%,37%)] font-[500]">Quickly inspect page layouts and visualize element boundaries.</p>
+        </div>
+      </div>
+      <div class="flex items-center justify-between">
+        <button type="button" class="px-3 py-2 font-bold border text-sm border-[hsl(0,0%,93%)] rounded-full cursor-pointer hover:bg-[hsl(3,77%,44%)] hover:text-white">Remove</button>
+        <div class="toogle-button cursor-pointer">red</div>
+      </div>
 
-  Extensions List
+  <div class="flex items-center space-x-4">
+    <span class="text-white">Inactive</span>
+    <button id="toggleSwitch"
+    class="w-14 h-8 flex items-center bg-gray-400 dark:bg-gray-600 rounded-full p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+    <div id="toggleCircle"
+      class="bg-white w-6 h-6 rounded-full shadow-md transform transition-transform duration-300"></div>
+  </button>
+  <span class="text-white">Active</span>
+</div>
 
-  All
-  Active
-  Inactive
+    </div>
 
-  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
-
-  <!-- DevLens
-  Quickly inspect page layouts and visualize element boundaries.
-  Remove
-
-  StyleSpy
-  Instantly analyze and copy CSS from any webpage element.
-  Remove
-
-  SpeedBoost
-  Optimizes browser resource usage to accelerate page loading.
-  Remove
-
-  JSONWizard
-  Formats, validates, and prettifies JSON responses in-browser.
-  Remove
-
-  TabMaster Pro
-  Organizes browser tabs into groups and sessions.
-  Remove
-
-  ViewportBuddy
-  Simulates various screen resolutions directly within the browser.
-  Remove
-
-  Markup Notes
-  Enables annotation and notes directly onto webpages for collaborative debugging.
-  Remove
-
-  GridGuides
-  Overlay customizable grids and alignment guides on any webpage.
-  Remove
-
-  Palette Picker
-  Instantly extracts color palettes from any webpage.
-  Remove
-
-  LinkChecker
-  Scans and highlights broken links on any page.
-  Remove
-
-  DOM Snapshot
-  Capture and export DOM structures quickly.
-  Remove
-
-  ConsolePlus
-  Enhanced developer console with advanced filtering and logging.
-  Remove -->
-
-  <div class="attribution">
+  </main>
+  <div class="attribution text-sm text-center text-white">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a class="text-[hsl(228,45%,44%)]" href="#">Your Name Here</a>.
   </div>
-  <script>
-    const listEl = document.querySelector('ul');
-
-      fetch('./data.json')
-      .then(res => res.json())
-      .then(data => 
-      data.forEach(ext => {
-        // console.log(ext.name)
-          // listEl.insertAdjacentHTML('beforeend', `<li>${ext.name}</li>`)
-      })
-
-      )
-  </script>
+<script src="./ext.js"></script>
 </body>
 </html>
