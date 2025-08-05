@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
@@ -17,8 +17,9 @@
       <div class="logo w-[60%]">
         <img src="./assets/images/logo.svg" alt="logo">
       </div>
-      <div class="theme-mode p-2.5 bg-[hsl(0,0%,93%)] dark:bg-[hsl(225,23%,24%)] rounded-lg cursor-pointer focus:outline focus:outline-[hsl(3,77%,44%)]" tabindex="0">
-        <img src="./assets/images/icon-moon.svg" alt="dark-mode">
+      <div class="theme-mode p-2.5 bg-[hsl(0,0%,93%)] dark:bg-[hsl(225,23%,24%)] rounded-lg cursor-pointer focus:outline focus:outline-[hsl(3,77%,44%)]" id="theme-mode" tabindex="0">
+        <img id="theme-icon" src="./assets/images/icon-moon.svg" alt="mode-icon">
+
       </div>
     </div>
 
@@ -29,118 +30,41 @@
       </div>
       <div class="categiries-list text-[hsl(227,75%,14%)] dark:text-white w-full flex items-center justify-center md:justify-end">
         <ul class="flex text-center space-x-2">
-          <li tabindex="0" class="py-2 px-4 text-sm bg-[hsl(200,60%,99%)] dark:bg-[hsl(226,25%,17%)] border border-[hsl(0,0%,78%)] dark:border-[hsl(226,11%,37%)] rounded-full cursor-pointer hover:bg-[hsl(200,60%,99%,0.1)] hover:text-[hsl(227,75%,14%,0.6)] dark:hover:bg-[hsl(226,11%,37%)] dark:focus:bg-[hsl(226,11%,37%)] focus:outline dark:focus:outline-2 focus:border-none focus:outline-[hsl(3,77%,44%)] focus:outline-offset-1 dark:focus:outline-offset-2">All</li>
-          <li tabindex="0" class="py-2 px-4 text-sm bg-[hsl(200,60%,99%)] dark:bg-[hsl(226,25%,17%)] border border-[hsl(0,0%,78%)] dark:border-[hsl(226,11%,37%)] rounded-full cursor-pointer hover:bg-[hsl(200,60%,99%,0.1)] hover:text-[hsl(227,75%,14%,0.6)] dark:hover:bg-[hsl(226,11%,37%)] dark:focus:bg-[hsl(226,11%,37%)] focus:outline dark:focus:outline-2 focus:border-none focus:outline-[hsl(3,77%,44%)] focus:outline-offset-1 dark:focus:outline-offset-2">Active</li>
-          <li tabindex="0" class="py-2 px-4 text-sm bg-[hsl(200,60%,99%)] dark:bg-[hsl(226,25%,17%)] border border-[hsl(0,0%,78%)] dark:border-[hsl(226,11%,37%)] rounded-full cursor-pointer hover:bg-[hsl(200,60%,99%,0.1)] hover:text-[hsl(227,75%,14%,0.6)] dark:hover:bg-[hsl(226,11%,37%)] dark:focus:bg-[hsl(226,11%,37%)] focus:outline dark:focus:outline-2 focus:border-none focus:outline-[hsl(3,77%,44%)] focus:outline-offset-1 dark:focus:outline-offset-2">Inactive</li>
+          <li tabindex="0" class="py-2 px-4 text-sm bg-[hsl(200,60%,99%)] dark:bg-[hsl(226,25%,17%)] border border-[hsl(0,0%,78%)] dark:border-[hsl(226,11%,37%)] rounded-full cursor-pointer hover:bg-[hsl(200,60%,99%,0.1)] hover:text-[hsl(227,75%,14%,0.6)] dark:hover:bg-[hsl(226,11%,37%)] dark:focus:bg-[hsl(226,11%,37%)] focus:outline dark:focus:outline-2 focus:border-none focus:outline-[hsl(3,77%,44%)] focus:outline-offset-1 dark:focus:outline-offset-2" id="all-button">All</li>
+          <li tabindex="0" class="py-2 px-4 text-sm bg-[hsl(200,60%,99%)] dark:bg-[hsl(226,25%,17%)] border border-[hsl(0,0%,78%)] dark:border-[hsl(226,11%,37%)] rounded-full cursor-pointer hover:bg-[hsl(200,60%,99%,0.1)] hover:text-[hsl(227,75%,14%,0.6)] dark:hover:bg-[hsl(226,11%,37%)] dark:focus:bg-[hsl(226,11%,37%)] focus:outline dark:focus:outline-2 focus:border-none focus:outline-[hsl(3,77%,44%)] focus:outline-offset-1 dark:focus:outline-offset-2" id="active-button" >Active</li>
+          <li tabindex="0" class="py-2 px-4 text-sm bg-[hsl(200,60%,99%)] dark:bg-[hsl(226,25%,17%)] border border-[hsl(0,0%,78%)] dark:border-[hsl(226,11%,37%)] rounded-full cursor-pointer hover:bg-[hsl(200,60%,99%,0.1)] hover:text-[hsl(227,75%,14%,0.6)] dark:hover:bg-[hsl(226,11%,37%)] dark:focus:bg-[hsl(226,11%,37%)] focus:outline dark:focus:outline-2 focus:border-none focus:outline-[hsl(3,77%,44%)] focus:outline-offset-1 dark:focus:outline-offset-2" id="inactive-button">Inactive</li>
         </ul>
       </div>  
      </div>
   </header>
-  <main class="extension-container w-full md:w-[90%] md:mx-auto md:grid md:gap-4 md:grid-cols-3 md:auto-rows-auto">
-    <div class="ext p-3.5 w-[95%] mx-auto bg-[hsl(200,60%,99%)] shadow-md rounded-2xl space-y-15 dark:bg-[hsl(226,25%,17%)] dark:border dark:border-[hsl(226,11%,37%)] md:w-full">
+  <main class="extension-container w-full space-y-3 md:w-[90%] md:mx-auto md:grid md:gap-4 md:grid-cols-3 md:auto-rows-auto">
+
+    <!-- <div class="ext p-3.5 w-[95%] mx-auto bg-[hsl(200,60%,99%)] shadow-md rounded-2xl space-y-15 dark:bg-[hsl(226,25%,17%)] dark:border dark:border-[hsl(226,11%,37%)] md:w-full">
       <div class="flex space-x-3">
         <div class="ext-logo">
           <img src="./assets/images/logo-devlens.svg" alt="logo">
         </div>
         <div class="ext-details text-wrap">
           <p class="name text-[hsl(227,75%,14%)] font-extrabold text-xl dark:text-white">DevLens</p>
-          <p class="description text-lg text-[hsl(0,0%,93%)] font-[500]">Quickly inspect page layouts and visualize element boundaries.</p>
+          <p class="description text-base text-[hsl(226,11%,37%)] dark:text-[hsl(0,0%,93%)] font-normal">Quickly inspect page layouts and visualize element boundaries.</p>
         </div>
       </div>
       <div class="flex items-center justify-between">
-        <button type="button" class="px-3 py-2 font-bold border text-sm border-[hsl(0,0%,93%)] rounded-full cursor-pointer hover:bg-[hsl(3,86%,64%)] hover:text-white dark:text-white hover:dark:text-[hsl(227,75%,14%)] dark:hover:border-[hsl(3,86%,64%)]">Remove</button>
+        <button type="button" class="px-3 py-2 font-bold border text-sm border-[hsl(0,0%,93%)] rounded-full cursor-pointer hover:bg-[hsl(3,86%,64%)] hover:text-white dark:text-white hover:dark:text-[hsl(227,75%,14%)] dark:hover:border-[hsl(3,86%,64%)] focus:outline-2 focus:outline-[hsl(3,77%,44%)] outline-offset-2 focus:bg-[hsl(0,0%,93%)] focus:text-[hsl(227,75%,14%)] dark:focus:bg-[hsl(226,11%,37%)] dark:focus:border-[hsl(226,11%,37%)]">Remove</button>
         <div class="toogle-button cursor-pointer">
           <label class="relative inline-block w-[55px] h-[30px]">
             <input type="checkbox" class="sr-only peer">
-            <span class="block w-full h-full rounded-full bg-[hsl(226,11%,37%)] peer-checked:bg-[hsl(3,86%,64%)] transition-colors duration-300"></span>
+            <span class="block w-full h-full rounded-full bg-[hsl(226,11%,37%)] peer-checked:bg-[hsl(3,86%,64%)] transition-colors duration-300 peer-focus:outline-1 peer-focus:outline-[hsl(3,86%,64%)] peer-focus:outline-offset-2"></span>
             <span class="absolute left-[3px] bottom-[3.5px] w-[23px] h-[23px] bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-[25px]"></span>
           </label>
         </div>
       </div>
 
-
-    </div>
-
-    <div class="ext p-3.5 w-[95%] mx-auto bg-[hsl(200,60%,99%)] shadow-md rounded-2xl space-y-15 dark:bg-[hsl(226,25%,17%)] md:w-full">
-      <div class="flex space-x-3">
-        <div class="ext-logo">
-          <img src="./assets/images/logo-devlens.svg" alt="logo">
-        </div>
-        <div class="ext-details text-wrap">
-          <p class="name text-[hsl(227,75%,14%)] font-extrabold text-xl dark:text-white">DevLens</p>
-          <p class="description text-lg text-[hsl(226,11%,37%)] font-[500]">Quickly inspect page layouts and visualize element boundaries.</p>
-        </div>
-      </div>
-      <div class="flex items-center justify-between">
-        <button type="button" class="px-3 py-2 font-bold border text-sm border-[hsl(0,0%,93%)] rounded-full cursor-pointer hover:bg-[hsl(3,86%,64%)] hover:text-white dark:text-white hover:dark:text-[hsl(227,75%,14%)] dark:hover:border-[hsl(3,86%,64%)]">Remove</button>
-        <div class="toogle-button cursor-pointer">
-          <label class="relative inline-block w-[55px] h-[30px]">
-            <input type="checkbox" class="sr-only peer">
-            <span class="block w-full h-full rounded-full bg-[hsl(226,11%,37%)] peer-checked:bg-[hsl(3,86%,64%)] transition-colors duration-300"></span>
-            <span class="absolute left-[3px] bottom-[3.5px] w-[23px] h-[23px] bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-[25px]"></span>
-          </label>
-        </div>
-      </div>
-
-
-    </div>
-
-    <div class="ext p-3.5 w-[95%] mx-auto bg-[hsl(200,60%,99%)] shadow-md rounded-2xl space-y-15 dark:bg-[hsl(226,25%,17%)] md:w-full">
-      <div class="flex space-x-3">
-        <div class="ext-logo">
-          <img src="./assets/images/logo-devlens.svg" alt="logo">
-        </div>
-        <div class="ext-details text-wrap">
-          <p class="name text-[hsl(227,75%,14%)] font-extrabold text-xl dark:text-white">DevLens</p>
-          <p class="description text-lg text-[hsl(226,11%,37%)] font-[500]">Quickly inspect page layouts and visualize element boundaries.</p>
-        </div>
-      </div>
-      <div class="flex items-center justify-between">
-        <button type="button" class="px-3 py-2 font-bold border text-sm border-[hsl(0,0%,93%)] rounded-full cursor-pointer hover:bg-[hsl(3,86%,64%)] hover:text-white dark:text-white hover:dark:text-[hsl(227,75%,14%)] dark:hover:border-[hsl(3,86%,64%)]">Remove</button>
-        <div class="toogle-button cursor-pointer">
-          <label class="relative inline-block w-[55px] h-[30px]">
-            <input type="checkbox" class="sr-only peer">
-            <span class="block w-full h-full rounded-full bg-[hsl(226,11%,37%)] peer-checked:bg-[hsl(3,86%,64%)] transition-colors duration-300"></span>
-            <span class="absolute left-[3px] bottom-[3.5px] w-[23px] h-[23px] bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-[25px]"></span>
-          </label>
-        </div>
-      </div>
-
-
-
-    </div>
-
-    <div class="ext p-3.5 w-[95%] mx-auto bg-[hsl(200,60%,99%)] shadow-md rounded-2xl space-y-15 dark:bg-[hsl(226,25%,17%)] md:w-full">
-      <div class="flex space-x-3">
-        <div class="ext-logo">
-          <img src="./assets/images/logo-devlens.svg" alt="logo">
-        </div>
-        <div class="ext-details text-wrap">
-          <p class="name text-[hsl(227,75%,14%)] font-extrabold text-xl dark:text-white">DevLens</p>
-          <p class="description text-lg text-[hsl(226,11%,37%)] font-[500]">Quickly inspect page layouts and visualize element boundaries.</p>
-        </div>
-      </div>
-      <div class="flex items-center justify-between">
-        <button type="button" class="px-3 py-2 font-bold border text-sm border-[hsl(0,0%,93%)] rounded-full cursor-pointer hover:bg-[hsl(3,86%,64%)] hover:text-white dark:text-white hover:dark:text-[hsl(227,75%,14%)] dark:hover:border-[hsl(3,86%,64%)]">Remove</button>
-        <div class="toogle-button cursor-pointer">
-          <label class="relative inline-block w-[55px] h-[30px]">
-            <input type="checkbox" class="sr-only peer">
-            <span class="block w-full h-full rounded-full bg-[hsl(226,11%,37%)] peer-checked:bg-[hsl(3,86%,64%)] transition-colors duration-300"></span>
-            <span class="absolute left-[3px] bottom-[3.5px] w-[23px] h-[23px] bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-[25px]"></span>
-          </label>
-        </div>
-      </div>
-
-
-
-    </div>
-
-
-
+    </div> -->
 
 
   </main>
-  <div class="attribution text-sm text-center text-white">
+  <div class="attribution text-sm text-center mt-2 text-black dark:text-white">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a class="text-[hsl(228,45%,44%)]" href="https://x.com/taiwosharon36">Taiwo Temitope Sharon</a>.
   </div>
