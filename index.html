@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./src/output.css">
 
 </head>
-<body class="min-h-[100vh] w-full bg-linear-180 from-[#EBF2FC] to-[#EEF8F9] bg-no-repeat dark:bg-linear-180 dark:from-[#040918] dark:to-[#091540]">
+<body class="min-h-[100vh] flex flex-col w-full bg-linear-180 from-[#EBF2FC] to-[#EEF8F9] bg-no-repeat dark:bg-linear-180 dark:from-[#040918] dark:to-[#091540]">
   <header class="w-full mx-auto py-6">
     <!-- THE PAGE LOGO AND PAGE THEME MODE SECTION -->
     <div class="logo-and-theme bg-[hsl(200,60%,99%)] shadow-md dark:bg-[hsl(226,25%,17%)] p-3 mx-4 flex items-center justify-between rounded-lg md:w-[90%] md:mx-auto">
@@ -36,7 +36,8 @@
       </div>  
      </div>
   </header>
-  <main class="extension-container w-full space-y-3 md:w-[90%] md:mx-auto md:grid md:gap-4 md:grid-cols-3 md:auto-rows-auto">
+  <div class="flex-grow">
+      <main class="extension-container w-full space-y-3 md:w-[90%] md:mx-auto md:grid md:gap-4 md:grid-cols-3 md:auto-rows-auto">
 
     <!-- <div class="ext p-3.5 w-[95%] mx-auto bg-[hsl(200,60%,99%)] shadow-md rounded-2xl space-y-15 dark:bg-[hsl(226,25%,17%)] dark:border dark:border-[hsl(226,11%,37%)] md:w-full">
       <div class="flex space-x-3">
@@ -63,10 +64,12 @@
 
 
   </main>
-  <div class="attribution text-sm text-center mt-2 text-black dark:text-white">
+  </div>
+
+  <footer class="attribution bottom-0 left-0 right-0 text-sm text-center mt-2 text-white dark:text-white">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a class="text-[hsl(228,45%,44%)]" href="https://x.com/taiwosharon36">Taiwo Temitope Sharon</a>.
-  </div>
+  </footer>
 <script src="./ext.js"></script>
 </body>
 </html>
